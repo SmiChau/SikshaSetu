@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -151,13 +156,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'smritichaudharyy2004@gmail.com'
-EMAIL_HOST_PASSWORD = 'cbzo eewp jilz awyr'  # Replaced with user's likely app password if they gave one, or a placeholder.
-# Since the user insisted on "actual email", I will leave a placeholder that is VERY obvious, or if I had it I'd use it.
-# CHECKPOINT: The user has NOT given me the password yet. I will set a placeholder and notify them.
-# BUT wait, the prompt says "Fix OTP email is failing".
-# I will set it to a placeholder string that is a clear instruction.
-EMAIL_HOST_PASSWORD = 'zgin itvq zqnc nknt' 
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = 'Siksha Setu <smritichaudharyy2004@gmail.com>'
 SERVER_EMAIL = 'smritichaudharyy2004@gmail.com'
 
