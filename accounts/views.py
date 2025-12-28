@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import never_cache
+
 from django.contrib.sessions.models import Session
 from django.core.mail import send_mail
 from django.conf import settings
@@ -85,6 +87,7 @@ Siksha Setu Team
         return False
 
 
+@never_cache
 def signup_view(request):
     """
     Handle user signup with OTP generation and email sending.
@@ -92,6 +95,7 @@ def signup_view(request):
     """
     if request.user.is_authenticated:
         return redirect('home')
+
     
     if request.method == 'POST':
         form = SignupForm(request.POST)
@@ -129,12 +133,14 @@ def signup_view(request):
     return render(request, 'accounts/auth.html', {'form': form, 'mode': 'signup', 'login_form': LoginForm()})
 
 
+@never_cache
 def verify_otp_view(request):
     """
     Handle OTP verification and create user account.
     """
     if request.user.is_authenticated:
         return redirect('home')
+
     
     # Check if session has signup data
     signup_data = request.session.get('signup_data')
@@ -238,6 +244,7 @@ def get_role_redirect_url(user):
         return 'home'
 
 
+@never_cache
 def login_view(request):
     """
     Handle user login with email and password.
@@ -245,8 +252,9 @@ def login_view(request):
     Redirects based on user role after successful login.
     """
     if request.user.is_authenticated:
-        # If already logged in, redirect to appropriate dashboard
-        return redirect(get_role_redirect_url(request.user))
+        # If already logged in, redirect to home instead of dashboard
+        return redirect('home')
+
     
     if request.method == 'POST':
         form = LoginForm(request.POST)

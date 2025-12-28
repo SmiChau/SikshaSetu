@@ -169,3 +169,6 @@ SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
 SESSION_SAVE_EVERY_REQUEST = False  # Save session on every request (optional, increases security)
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Session persists until expiration or logout
 SESSION_COOKIE_AGE = 86400  # 24 hours in seconds
+
+# Login URL
+LOGIN_URL = 'accounts:login'
