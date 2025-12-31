@@ -56,12 +56,16 @@
                     <small class="error-text">{{ login_form.password.errors.0 }}</small>
                     {% endif %}
 
-                    <div class="remember-me-container">
-                        {{ login_form.remember_me }}
-                        <label for="rememberMe">Remember Me</label>
-                    </div>
+                    <div class="login-options">
+                        <div class="remember-me-container">
+                            {{ login_form.remember_me }}
+                            <label for="rememberMe">Remember Me</label>
+                        </div>
 
-                    <a href="{% url 'accounts:forgot_password' %}" class="forgot-password">Forgot Password?</a>
+                        <a href="{% url 'accounts:forgot_password' %}" class="forgot-password">
+                            Forgot Password?
+                        </a>
+                    </div>
 
                     <button type="submit" class="btn solid">Login</button>
 
@@ -144,7 +148,7 @@
                         Sign up
                     </button>
                 </div>
-                <img src="{% static 'accounts/img/demogirl1.png' %}" class="image" alt="" onerror="this.style.display='none'">
+                <img src="{% static 'accounts/img/last.png' %}" class="image" alt="" onerror="this.style.display='none'">
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -156,7 +160,7 @@
                         Sign in
                     </button>
                 </div>
-                <img src="{% static 'accounts/img/demoboy1.png' %}" class="image" alt=""
+                <img src="{% static 'accounts/img/demogirl2.png' %}" class="image" alt=""
                     onerror="this.style.display='none'">
             </div>
         </div>

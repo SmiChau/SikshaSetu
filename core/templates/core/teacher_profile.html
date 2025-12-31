@@ -1,0 +1,148 @@
+{% extends "core/base_public.html" %}
+{% load static %}
+
+{% block title %}Dr. Angela Yu - SikshaSetu{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/teachers.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/courses.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Profile Section -->
+<section class="profile-hero text-center">
+    <div class="container">
+        <div class="d-flex flex-column align-items-center">
+            <img src="" class="profile-avatar-lg mb-4" alt="Dr. Angela Yu">
+            <h1 class="fw-bold mb-2 display-6" style="color: var(--primary-blue);">Dr. Angela Yu</h1>
+            <p class="text-muted fw-bold text-uppercase ls-1 mb-3" style="color: var(--mint-green);">Development Lead
+                Instructor</p>
+            <p class="text-dark mb-4" style="max-width: 700px; font-size: 1.1rem; line-height: 1.6;">
+                I'm Angela, I'm a developer with a passion for teaching. I'm the lead instructor at the London App
+                Brewery, London's leading Programming Bootcamp. I've helped hundreds of thousands of students learn to
+                code and change their lives by becoming a developer.
+            </p>
+
+            <!-- <div class="profile-social-links mb-4">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-globe"></i></a>
+            </div> -->
+
+            <div class="d-flex gap-4 flex-wrap justify-content-center">
+                <div class="profile-stat-box">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Courses</span>
+                </div>
+                <div class="profile-stat-box">
+                    <span class="stat-number">54k+</span>
+                    <span class="stat-label">Students</span>
+                </div>
+                <div class="profile-stat-box">
+                    <span class="stat-number">4.8</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Left Content: Courses -->
+            <div class="col-lg-8">
+                <div class="d-flex align-items-center mb-4">
+                    <h3 class="fw-bold mb-0">Courses by Angela</h3>
+                    <span class="badge bg-light text-dark ms-3 rounded-pill">5 Courses</span>
+                </div>
+
+                <!-- Course List -->
+                <div class="row g-4">
+                    <!-- Course 1 -->
+                    <div class="col-md-6">
+                        <div class="card course-card-grid h-100">
+                            <div class="course-thumb-wrapper">
+                                <span class="course-badge">Bestseller</span>
+                                <img src="https://placehold.co/600x400/1A535C/FFF?text=Web+Dev" class="course-thumb"
+                                    alt="Course Thumbnail">
+                            </div>
+                            <div class="card-body course-content d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-2">The Complete Web Development Bootcamp</h5>
+                                <div class="course-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    <span class="text-muted ms-1">(4.8)</span>
+                                </div>
+                                <div class="course-meta mt-auto">
+                                    <span><i class="far fa-clock me-1"></i> 60h</span>
+                                    <span><i class="fas fa-video me-1"></i> 120 Lessons</span>
+                                </div>
+                                <a href="{% url 'core:course_detail' %}"
+                                    class="btn btn-view-course w-100 mt-3 rounded-pill">View Course</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="col-md-6">
+                        <div class="card course-card-grid h-100">
+                            <div class="course-thumb-wrapper">
+                                <span class="course-badge text-warning">New</span>
+                                <img src="https://placehold.co/600x400/FFE066/333?text=Python" class="course-thumb"
+                                    alt="Course Thumbnail">
+                            </div>
+                            <div class="card-body course-content d-flex flex-column">
+                                <h5 class="card-title fw-bold mb-2">100 Days of Code: The Complete Python Pro Bootcamp
+                                </h5>
+                                <div class="course-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <span class="text-muted ms-1">(5.0)</span>
+                                </div>
+                                <div class="course-meta mt-auto">
+                                    <span><i class="far fa-clock me-1"></i> 58h</span>
+                                    <span><i class="fas fa-video me-1"></i> 100 Lessons</span>
+                                </div>
+                                <a href="{% url 'core:course_detail' %}"
+                                    class="btn btn-view-course w-100 mt-3 rounded-pill">View Course</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar: Info -->
+            <div class="col-lg-4">
+                <div class="profile-sidebar-card">
+                    <h5 class="sidebar-title">Professional Info</h5>
+                    <ul class="list-unstyled info-list">
+                        <li><i class="fas fa-graduation-cap"></i>
+                            <div><strong>Education:</strong><br>MD, Imperial College London</div>
+                        </li>
+                        <li><i class="fas fa-briefcase"></i>
+                            <div><strong>Experience:</strong><br>Lead Instructor, App Brewery</div>
+                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i>
+                            <div><strong>Location:</strong><br>London, UK</div>
+                        </li>
+                        <li><i class="fas fa-language"></i>
+                            <div><strong>Languages:</strong><br>English, Mandarin</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="profile-sidebar-card">
+                    <h5 class="sidebar-title">Contact</h5>
+                    <p class="text-muted small mb-3">For course related questions, please use the Q&A section in the
+                        course.</p>
+                    <a href="#" class="btn btn-outline-primary w-100 rounded-pill fw-bold">Send Message</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -252,9 +252,8 @@ def login_view(request):
     Redirects based on user role after successful login.
     """
     if request.user.is_authenticated:
-        # If already logged in, redirect to home instead of dashboard
-        return redirect('home')
-
+        # If already logged in, redirect to their role-based dashboard
+        return redirect(get_role_redirect_url(request.user))
     
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -272,7 +271,6 @@ def login_view(request):
                         request,
                         'Your email address has not been verified. Please verify your email before logging in.'
                     )
-
                     return render(request, 'accounts/auth.html', {'login_form': form, 'mode': 'login', 'form': SignupForm()})
                 
                 # Check if user is active
@@ -280,8 +278,6 @@ def login_view(request):
                     messages.error(
                         request,
                         'Your account is currently inactive. Please contact support for assistance.'
-
-
                     )
                     return render(request, 'accounts/auth.html', {'login_form': form, 'mode': 'login', 'form': SignupForm()})
                 
@@ -299,15 +295,13 @@ def login_view(request):
                 
                 messages.success(request, f'Welcome back, {user.email}!')
                 
-                # Redirect to Home page (Requirement: FIRST/HOME page)
-                return redirect('home')
+                # Redirect to Role Specific Dashboard as requested
+                return redirect(get_role_redirect_url(user))
             else:
                 # Invalid credentials or user not verified
-                # Don't reveal specific reason for security
                 messages.error(
                     request,
-                    'Invalid email or password. Please check your credentials and try again. '
-                    'If you have not verified your email, please do so before logging in.'
+                    'Invalid email or password. Please check your credentials and try again.'
                 )
     else:
         form = LoginForm()
@@ -328,31 +322,41 @@ def logout_view(request):
 @login_required
 def student_dashboard_view(request):
     """
-    Student dashboard page (dummy page for now).
+    Student dashboard page.
     """
     # Verify user is a student
     if request.user.role != 'student':
         messages.error(request, 'You do not have permission to access this page.')
         return redirect(get_role_redirect_url(request.user))
     
-    return render(request, 'accounts/student_dashboard.html', {
-        'user': request.user
-    })
+    try:
+        from django.template.exceptions import TemplateDoesNotExist
+        return render(request, 'accounts/student_dashboard.html', {
+            'user': request.user
+        })
+    except TemplateDoesNotExist:
+        messages.error(request, "Student Dashboard is under construction.")
+        return redirect('home')
 
 
 @login_required
 def teacher_dashboard_view(request):
     """
-    Teacher dashboard page (dummy page for now).
+    Teacher dashboard page.
     """
     # Verify user is a teacher
     if request.user.role != 'teacher':
         messages.error(request, 'You do not have permission to access this page.')
         return redirect(get_role_redirect_url(request.user))
     
-    return render(request, 'accounts/teacher_dashboard.html', {
-        'user': request.user
-    })
+    try:
+        from django.template.exceptions import TemplateDoesNotExist
+        return render(request, 'accounts/teacher_dashboard.html', {
+            'user': request.user
+        })
+    except TemplateDoesNotExist:
+        messages.error(request, "Teacher Dashboard is under construction.")
+        return redirect('home')
 
 
 def forgot_password_view(request):

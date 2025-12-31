@@ -1,0 +1,215 @@
+{% extends "core/base_public.html" %}
+{% load static %}
+
+{% block title %}Complete Web Development Bootcamp - SikshaSetu{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/courses.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'core:course_list' %}">Courses</a></li>
+            <li class="breadcrumb-item"><a href="#">Development</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Web Development Bootcamp</li>
+        </ol>
+    </nav>
+
+    <!-- Top Info -->
+    <div class="mb-4">
+        <h1 class="fw-bold mb-2 text-dark">Complete Web Development Bootcamp</h1>
+        <p class="text-muted mb-3 fs-5">Become a full-stack web developer with just one course. HTML, CSS, Javascript,
+            Node, React, MongoDB, Web3 and DApps</p>
+        <div class="d-flex align-items-center gap-4 text-muted small">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://placehold.co/50/50" class="rounded-circle" width="30" alt="Instructor">
+                <span>By <strong class="text-dark">Dr. Angela Yu</strong></span>
+            </div>
+            <span><i class="fas fa-star text-warning me-1"></i> 4.8 (12,345 ratings)</span>
+            <span><i class="fas fa-user-graduate me-1"></i> 54,000+ Students</span>
+            <span><i class="fas fa-globe me-1"></i> English</span>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Main Content Area -->
+        <div class="col-lg-8">
+            <!-- Video Player -->
+            <div class="video-player-wrapper mb-4">
+                <!-- Placeholder for dynamic video player -->
+                <div class="video-placeholder">
+                    <div class="text-center">
+                        <i class="fas fa-play-circle fa-4x mb-3 text-white opacity-75"></i>
+                        <h4 class="text-white">Introduction to Web Development</h4>
+                        <p class="text-white-50">Lesson 1 &bull; 10 min</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About This Course -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+                <div class="card-body p-4">
+                    <h4 class="fw-bold mb-3">About This Course</h4>
+                    <p class="text-muted">
+                        Welcome to the Complete Web Development Bootcamp, the only course you need to learn to code and
+                        become a full-stack web developer. With over 150,000 ratings and a 4.8 average, my Web
+                        Development course is one of the HIGHEST RATED courses in the history of Udemy!
+                    </p>
+                    <h5 class="fw-bold mt-4 mb-3">What you'll learn</h5>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> HTML5 & CSS3</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Javascript (ES6+)</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> React.js Framework</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Node.js & Express</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> MongoDB & Mongoose</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Deploying Apps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discussion / Comments -->
+            <div class="comments-section bg-white p-4 rounded-4 shadow-sm border-0">
+                <div class="d-flex align-items-center gap-2 mb-4">
+                    <h4 class="fw-bold mb-0">Student Discussions</h4>
+                    <span class="badge bg-light text-dark rounded-pill">142</span>
+                </div>
+
+                <!-- Input -->
+                <div class="comment-input-box">
+                    <img src="https://placehold.co/100" class="user-avatar-md" alt="User Avatar">
+                    <div class="comment-input-wrapper">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <div class="comment-actions">
+                            <button class="btn btn-sm btn-light rounded-pill px-3">Cancel</button>
+                            <button class="btn btn-sm btn-primary rounded-pill px-3">Comment</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 1 -->
+                <div class="student-comment">
+                    <img src="https://placehold.co/100?text=JD" class="user-avatar-md" alt="User">
+                    <div class="comment-body w-100">
+                        <div class="d-flex align-items-center mb-1">
+                            <h6 class="mb-0">John Doe</h6>
+                            <span class="comment-time">2 hours ago</span>
+                        </div>
+                        <p class="comment-text">This introduction really helped clarify things for me! Is there a
+                            specific text editor you recommend for beginners?</p>
+                        <div class="comment-interactions">
+                            <div class="interaction-item"><i class="far fa-thumbs-up"></i> 12</div>
+                            <div class="interaction-item"><i class="far fa-thumbs-down"></i></div>
+                            <div class="interaction-item fw-bold">Reply</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="student-comment">
+                    <img src="https://placehold.co/100?text=AS" class="user-avatar-md" alt="User">
+                    <div class="comment-body w-100">
+                        <div class="d-flex align-items-center mb-1">
+                            <h6 class="mb-0">Anita Sharma</h6>
+                            <span class="comment-time">5 hours ago</span>
+                        </div>
+                        <p class="comment-text">Great explanation of the DOM. I never understood it until now. Thanks
+                            Dr. Angela!</p>
+                        <div class="comment-interactions">
+                            <div class="interaction-item"><i class="far fa-thumbs-up"></i> 8</div>
+                            <div class="interaction-item"><i class="far fa-thumbs-down"></i></div>
+                            <div class="interaction-item fw-bold">Reply</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="course-sidebar sticky-top" style="top: 20px;">
+                <div class="sidebar-header d-flex justify-content-between align-items-center">
+                    <span class="mb-0">Course Content</span>
+                    <small class="opacity-75">10/120 Completed</small>
+                </div>
+
+                <ul class="lesson-list">
+                    <li class="lesson-item active">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-play-circle"></i>
+                            <div>
+                                <div class="fw-bold small">1. Introduction</div>
+                                <div class="text-muted small">10:00</div>
+                            </div>
+                        </div>
+                        <i class="fas fa-check-circle text-success"></i>
+                    </li>
+                    <li class="lesson-item">
+                        <div class="d-flex align-items-center">
+                            <i class="far fa-play-circle"></i>
+                            <div>
+                                <div class="fw-bold small">2. How the Internet Works</div>
+                                <div class="text-muted small">15:30</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lesson-item">
+                        <div class="d-flex align-items-center">
+                            <i class="far fa-play-circle"></i>
+                            <div>
+                                <div class="fw-bold small">3. History of HTML</div>
+                                <div class="text-muted small">12:15</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lesson-item">
+                        <div class="d-flex align-items-center">
+                            <i class="far fa-play-circle"></i>
+                            <div>
+                                <div class="fw-bold small">4. HTML Documents</div>
+                                <div class="text-muted small">20:00</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="lesson-item">
+                        <div class="d-flex align-items-center">
+                            <i class="far fa-play-circle"></i>
+                            <div>
+                                <div class="fw-bold small">5. HMTL Headings & Paragraphs</div>
+                                <div class="text-muted small">18:45</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="p-3 bg-light border-top text-center">
+                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-bold">Load More
+                        Sections</button>
+                </div>
+
+                <div class="p-3">
+                    <h6 class="fw-bold small text-muted text-uppercase mb-3">Instructors</h6>
+                    <div class="d-flex align-items-center gap-3">
+                        <img src="https://placehold.co/50/50" class="rounded-circle" width="50" alt="Instructor">
+                        <div>
+                            <div class="fw-bold">Dr. Angela Yu</div>
+                            <div class="small text-muted">Dev & Lead Instructor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

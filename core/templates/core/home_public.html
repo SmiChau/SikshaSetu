@@ -1,0 +1,184 @@
+{% extends "core/base_public.html" %}
+{% load static %}
+
+{% block title %}SikshaSetu - Your Bridge to Boundless Knowledge{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<header class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="hero-title">
+                    Bridge to <br>
+                    <span style="color: var(--mint-green);">Boundless Knowledge</span>
+                </h1>
+                <p class="hero-subtitle">
+                    SikshaSetu connects you with world-class teachers and a vibrant community.
+                    Start your learning journey today with our curated courses.
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'core:course_list' %}" class="btn btn-cta-login px-5 py-3">Explore Courses</a>
+                    <a href="{% url 'core:about' %}" class="btn btn-outline-dark rounded-pill px-5 py-3 fw-bold">Learn
+                        More</a>
+                </div>
+
+                <div class="mt-5 d-flex gap-4 text-muted">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-user-graduate fa-lg" style="color: var(--mint-green)"></i>
+                        <span>10k+ Students</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-chalkboard-teacher fa-lg" style="color: var(--mint-green)"></i>
+                        <span>Expert Mentors</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 position-relative">
+                <!-- image -->
+                <img src="{% static 'core/img/hero-illustration.png' %}" alt="Learning" class="img-fluid"
+                    style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));">
+
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Features Section -->
+<section class="py-5 bg-white">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Why Choose SikshaSetu?</h2>
+            <p class="text-muted w-50 mx-auto">We provide the tools and resources you need to succeed in your
+                educational journey.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-4 rounded-4" style="background: var(--bg-light); height: 100%;">
+                    <div class="mb-4 d-inline-block p-3 rounded-circle" style="background: rgba(26, 83, 92, 0.1);">
+                        <i class="fas fa-video fa-2x" style="color: var(--primary-blue);"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Video-Based Learning</h4>
+                    <p class="text-muted">Learn through high-quality recorded videos anytime, anywhere at your own pace.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 rounded-4" style="background: var(--bg-light); height: 100%;">
+                    <div class="mb-4 d-inline-block p-3 rounded-circle" style="background: rgba(255, 224, 102, 0.2);">
+                        <i class="fas fa-certificate fa-2x" style="color: #e6c200;"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Certified Learning</h4>
+                    <p class="text-muted">Earn certificates upon completion to showcase your new skills.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 rounded-4" style="background: var(--bg-light); height: 100%;">
+                    <div class="mb-4 d-inline-block p-3 rounded-circle" style="background: rgba(78, 205, 196, 0.1);">
+                        <i class="fas fa-users fa-2x" style="color: var(--mint-green);"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">Community Support</h4>
+                    <p class="text-muted">Learn together with a community of peers and mentors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Courses Section -->
+<section class="py-5" style="background: var(--bg-light);">
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-end mb-5">
+            <div>
+                <h2 class="section-title mb-0">Popular Courses</h2>
+            </div>
+            <a href="{% url 'core:course_list' %}" class="btn btn-outline-dark rounded-pill px-4">View All</a>
+        </div>
+
+        <div class="row g-4">
+            <!-- Dummy Course 1 -->
+            <div class="col-md-4">
+                <div class="course-card h-100">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="card-img-top" alt="Course 1">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-light text-dark border">Technology</span>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <h5 class="fw-bold mb-2">Introduction to Artificial Intelligence</h5>
+                        <p class="text-muted small mb-3">Learn the basics of AI and Machine Learning.</p>
+                        <hr class="opacity-10">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="bg-secondary rounded-circle" style="width: 30px; height: 30px;"></div>
+                                <small class="fw-bold">Dr. Sharma</small>
+                            </div>
+                            <h5 class="text-primary mb-0 fw-bold">Rs.800</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dummy Course 2 -->
+            <div class="col-md-4">
+                <div class="course-card h-100">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="card-img-top" alt="Course 2">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-light text-dark border">Design</span>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <h5 class="fw-bold mb-2">UI/UX Design Masterclass</h5>
+                        <p class="text-muted small mb-3">Design beautiful interfaces that users love.</p>
+                        <hr class="opacity-10">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="bg-secondary rounded-circle" style="width: 30px; height: 30px;"></div>
+                                <small class="fw-bold">Sarah J.</small>
+                            </div>
+                            <h5 class="text-primary mb-0 fw-bold">Rs.100</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dummy Course 3 -->
+            <div class="col-md-4">
+                <div class="course-card h-100">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        class="card-img-top" alt="Course 3">
+                    <div class="p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-light text-dark border">Business</span>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <h5 class="fw-bold mb-2">Business Strategy for Startups</h5>
+                        <p class="text-muted small mb-3">Scale your business with proven strategies.</p>
+                        <hr class="opacity-10">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="bg-secondary rounded-circle" style="width: 30px; height: 30px;"></div>
+                                <small class="fw-bold">R. Verma</small>
+                            </div>
+                            <h5 class="text-primary mb-0 fw-bold">Rs.500</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 text-center text-white" style="background-color: var(--primary-blue);">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Ready to Start Learning?</h2>
+        <p class="mb-4 opacity-75">Join thousands of students and start your journey today.</p>
+        <a href="{% url 'accounts:signup' %}" class="btn btn-cta-login px-5 py-3">Get Started for Free</a>
+    </div>
+</section>
+{% endblock %}

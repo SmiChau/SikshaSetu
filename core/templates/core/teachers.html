@@ -1,0 +1,129 @@
+{% extends "core/base_public.html" %}
+{% load static %}
+
+{% block title %}Meet Our Teachers - SikshaSetu{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/teachers.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light">
+    <div class="container">
+        <!-- Header -->
+        <div class="text-center mb-5">
+            <h1 class="fw-bold display-5" style="color: var(--primary-blue);">Meet Our Teachers</h1>
+            <p class="text-muted lead mx-auto" style="max-width: 600px;">Expert mentors committed to your success.
+                Browse our team of industry professionals.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="teacher-filter-bar d-flex flex-wrap gap-3 align-items-center justify-content-center">
+            <button class="btn btn-outline-mint rounded-pill active px-4">All Experts</button>
+            <button class="btn btn-outline-mint rounded-pill px-4">Development</button>
+            <button class="btn btn-outline-mint rounded-pill px-4">Design</button>
+            <button class="btn btn-outline-mint rounded-pill px-4">Business</button>
+            <button class="btn btn-outline-mint rounded-pill px-4">Language</button>
+        </div>
+
+        <!-- Teacher Grid -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Teacher 1 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="teacher-card">
+                    <div class="teacher-avatar-wrapper">
+                        <img src="https://placehold.co/150/150?text=AY" class="teacher-avatar" alt="Angela Yu">
+                    </div>
+                    <h5 class="teacher-name">Dr. Angela Yu</h5>
+                    <div class="teacher-expertise">Development Lead</div>
+                    <p class="teacher-bio-short">PhD turned developer and lead instructor. Passionate about teaching
+                        code.</p>
+                    <div class="teacher-stats-mini">
+                        <span><i class="fas fa-video me-1"></i> 5 Courses</span>
+                        <span><i class="fas fa-users me-1"></i> 50k+ Students</span>
+                    </div>
+                    <a href="{% url 'core:teacher_profile' %}" class="btn btn-view-profile stretched-link">View
+                        Profile</a>
+                </div>
+            </div>
+
+            <!-- Teacher 2 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="teacher-card">
+                    <div class="teacher-avatar-wrapper">
+                        <img src="https://placehold.co/150/150?text=GS" class="teacher-avatar" alt="Gary Simon">
+                    </div>
+                    <h5 class="teacher-name">Gary Simon</h5>
+                    <div class="teacher-expertise">UI/UX Design</div>
+                    <p class="teacher-bio-short">Full stack developer with 20+ years of experience in design and
+                        frontend.</p>
+                    <div class="teacher-stats-mini">
+                        <span><i class="fas fa-video me-1"></i> 3 Courses</span>
+                        <span><i class="fas fa-users me-1"></i> 25k+ Students</span>
+                    </div>
+                    <a href="{% url 'core:teacher_profile' %}" class="btn btn-view-profile stretched-link">View
+                        Profile</a>
+                </div>
+            </div>
+
+            <!-- Teacher 3 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="teacher-card">
+                    <div class="teacher-avatar-wrapper">
+                        <img src="" class="teacher-avatar" alt="Jose Portilla">
+                    </div>
+                    <h5 class="teacher-name">Jose Portilla</h5>
+                    <div class="teacher-expertise">Data Science</div>
+                    <p class="teacher-bio-short">Head of Data Science at Pierian Data. Expert in Python and Machine
+                        Learning.</p>
+                    <div class="teacher-stats-mini">
+                        <span><i class="fas fa-video me-1"></i> 8 Courses</span>
+                        <span><i class="fas fa-users me-1"></i> 100k+ Students</span>
+                    </div>
+                    <a href="{% url 'core:teacher_profile' %}" class="btn btn-view-profile stretched-link">View
+                        Profile</a>
+                </div>
+            </div>
+
+            <!-- Teacher 4 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="teacher-card">
+                    <div class="teacher-avatar-wrapper">
+                        <img src="" class="teacher-avatar" alt="Seth Godin">
+                    </div>
+                    <h5 class="teacher-name">Seth Godin</h5>
+                    <div class="teacher-expertise">Marketing</div>
+                    <p class="teacher-bio-short">Best-selling author and marketing pioneer. Teaching modern strategy.
+                    </p>
+                    <div class="teacher-stats-mini">
+                        <span><i class="fas fa-video me-1"></i> 2 Courses</span>
+                        <span><i class="fas fa-users me-1"></i> 15k+ Students</span>
+                    </div>
+                    <a href="{% url 'core:teacher_profile' %}" class="btn btn-view-profile stretched-link">View
+                        Profile</a>
+                </div>
+            </div>
+            <!-- Teacher 5 -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="teacher-card">
+                    <div class="teacher-avatar-wrapper">
+                        <img src="" class="teacher-avatar" alt="Sarah Jenkins">
+                    </div>
+                    <h5 class="teacher-name">Sarah Jenkins</h5>
+                    <div class="teacher-expertise">Language Arts</div>
+                    <p class="teacher-bio-short">Certified linguist helping students master English and Spanish.</p>
+                    <div class="teacher-stats-mini">
+                        <span><i class="fas fa-video me-1"></i> 4 Courses</span>
+                        <span><i class="fas fa-users me-1"></i> 8k+ Students</span>
+                    </div>
+                    <a href="{% url 'core:teacher_profile' %}" class="btn btn-view-profile stretched-link">View
+                        Profile</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+{% endblock %}

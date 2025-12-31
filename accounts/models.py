@@ -5,10 +5,21 @@ from datetime import timedelta
 from .managers import CustomUserManager
 
 
+
+
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     """
     Custom User model that uses email instead of username for authentication.
     """
+    def create_superuser(self, email, password=None, **extra_fields):
+        extra_fields.setdefault("is_staff", True)
+        extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("role", "admin")
+
+        if extra_fields.get("role") != "admin":
+            raise ValueError("Superuser must have admin role")
+
+        return self.create_user(email, password, **extra_fields)
     
     ROLE_CHOICES = [
         ('student', 'Student'),
