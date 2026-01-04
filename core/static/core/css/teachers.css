@@ -19,6 +19,7 @@
     text-align: center;
     padding: 30px 20px;
     height: 100%;
+    position: relative;
 }
 
 .teacher-card:hover {
@@ -81,10 +82,10 @@
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.btn-view-profile {
-    background-color: transparent;
+ .btn-view-profile {
+    background-color: var(--primary-blue);
     border: 2px solid var(--primary-blue);
-    color: var(--primary-blue);
+    color: var(--white);
     font-weight: 700;
     border-radius: 50px;
     padding: 8px 25px;
@@ -107,8 +108,8 @@
 }
 
 .teacher-card:hover .btn-view-profile {
-    background-color: var(--primary-blue);
-    color: white;
+    background-color: var(--accent-yellow);
+    color: var(--primary-blue);
 }
 
 /* --- Teacher Profile Page --- */

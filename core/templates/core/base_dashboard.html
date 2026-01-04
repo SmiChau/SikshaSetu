@@ -37,8 +37,8 @@
 
             <div class="profile-section">
                 <img src="{% static 'core/img/user-profile.jpg' %}" alt="User Profile" class="profile-img">
-                <!--username change to {{ user.get_full_name|default:user.username }} -->
-                <h3 class="username">abd</h3>
+                
+                <h3 class="username">{{ user.get_full_name|default:user.username }}</h3>
                 <p class="user-role">Student</p>
 
                 <a href="#" class="view-profile-btn">View Profile</a>

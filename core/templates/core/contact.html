@@ -1,0 +1,173 @@
+{% extends 'core/base_public.html' %}
+{% load static %}
+
+{% block title %}Contact Us | SikshaSetu{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'core/css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="contact-container">
+        <div class="contact-wrapper">
+            <!-- Left Side: Information -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Have questions or want to join our teaching community? We'd love to hear from you!</p>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>support@sikshasetu.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>(+977)9808000000</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>123 Education Lane, Knowledge City</span>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="mt-5">
+                    <p class="small text-white-50 fst-italic">
+                        "Education is the passport to the future, for tomorrow belongs to those who prepare for it
+                        today."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="contact-form">
+                <div id="form-container">
+                    <h3 class="mb-4" style="color: var(--primary-blue); font-weight: 700;">Send us a Message</h3>
+
+                    <form id="contactForm" novalidate>
+                        <!-- Basic Info -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name *</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" class="form-control-custom" id="fullName"
+                                            placeholder="Ram Maharjan" required>
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="invalid-feedback">Please enter your full name.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <div class="input-wrapper">
+                                        <input type="email" class="form-control-custom" id="email"
+                                            placeholder="ram@example.com" required>
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <div class="input-wrapper">
+                                <input type="tel" class="form-control-custom" id="phone"
+                                    placeholder="(+977) 9841000000">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+
+                        <!-- Purpose Selection -->
+                        <div class="form-group">
+                            <label for="purpose">Purpose *</label>
+                            <select class="form-control-custom" id="purpose" required
+                                onchange="toggleInstructorFields()">
+                                <option value="" selected disabled>Select a purpose...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="instructor">Apply as Instructor</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a purpose.</div>
+                        </div>
+
+                        <!-- Conditional Instructor Fields -->
+                        <div id="instructorFields" class="instructor-fields">
+                            <div class="alert alert-info border-0 bg-light-info text-dark shadow-sm">
+                                <i class="fas fa-info-circle me-2 text-info"></i>
+                                <small>Instructor applications are reviewed by the admin. You will be contacted via
+                                    email for the next steps.</small>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="expertise">Area of Expertise *</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" class="form-control-custom" id="expertise"
+                                                placeholder="e.g. Mathematics, Python">
+                                            <i class="fas fa-chalkboard-teacher"></i>
+                                        </div>
+                                        <div class="invalid-feedback">Please specify your expertise.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="experience">Years of Experience *</label>
+                                        <div class="input-wrapper">
+                                            <input type="number" class="form-control-custom" id="experience"
+                                                placeholder="e.g. 5" min="0">
+                                            <i class="fas fa-history"></i>
+                                        </div>
+                                        <div class="invalid-feedback">Please enter years of experience.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cv">Upload CV / Portfolio (PDF)</label>
+                                <input type="file" class="form-control-custom" id="cv" accept=".pdf,.doc,.docx"
+                                    style="padding-left: 15px;">
+                            </div>
+                        </div>
+
+                        <!-- Common Fields -->
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <div class="input-wrapper">
+                                <input type="text" class="form-control-custom" id="subject"
+                                    placeholder="What is this about?" required>
+                                <i class="fas fa-heading"></i>
+                            </div>
+                            <div class="invalid-feedback">Please enter a subject.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message / Motivation *</label>
+                            <textarea class="form-control-custom" id="message" placeholder="How can we help you?"
+                                required></textarea>
+                            <div class="invalid-feedback">Please enter your message.</div>
+                        </div>
+
+                        <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="mb-3">Thank You!</h3>
+                    <p class="text-muted">Your request has been submitted successfully. We will get back to you shortly.
+                    </p>
+                    <button class="btn btn-outline-primary rounded-pill mt-4 px-4" onclick="location.reload()">Send
+                        Another Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'core/js/contact.js' %}"></script>
+{% endblock %}

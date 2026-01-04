@@ -30,3 +30,7 @@ def course_detail(request):
 def teacher_profile(request):
     return render(request, 'core/teacher_profile.html')
 
+# contact page
+def contact(request):
+    return render(request, 'core/contact.html')
+
